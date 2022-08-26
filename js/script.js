@@ -19,20 +19,30 @@ Consigli del giorno:
 
 const playerNumber = Math.floor(Math.random() * 6) + 1
 console.log(playerNumber);
+const playerScore = document.getElementById("player-score");
+playerScore.innerHTML += playerNumber;
 
 // Genera un numero random da 1 a 6 per il computer
 
 const computerNumber = Math.floor(Math.random() * 6) + 1
 console.log(computerNumber);
+const computerScore = document.getElementById("computer-score");
+computerScore.innerHTML += computerNumber;
 
 // Trovare il vincitore confrontando i punteggi (piu alto)
 
 if (playerNumber > computerNumber) {
-    console.log("Player Wins");
-} else if (computerNumber > playerNumber) {
-    console.log("Computer Wins");
+    console.log("Player");
+    const result = document.getElementById("result-box");
+    result.innerHTML += "Player"
+} else if (playerNumber < computerNumber) {
+    console.log("Computer");
+    const result = document.getElementById("result-box");
+    result.innerHTML += "Computer"
 } else {
     console.log("It's a Draw");
+    const result = document.getElementById("result-box");
+    result.innerHTML += "It's a Draw. Replay"
 }
 
 
